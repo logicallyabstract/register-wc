@@ -1,0 +1,42 @@
+{
+  "name": "@logicallyabstract/register-wc",
+  "version": "0.0.1",
+  "description": "Register a Web Component with the optionality for a test-friendly override",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "run-s clean build:ts",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "format": "run-s format:eslint format:prettier",
+    "format:eslint": "eslint --fix --ext .js,.ts ./",
+    "format:prettier": "prettier --write .",
+    "lint": "run-s lint:eslint lint:prettier typecheck",
+    "lint:eslint": "eslint --ext .js,.ts ./",
+    "lint:prettier": "prettier -c .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logicallyabstract/register-wc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/logicallyabstract/register-wc/issues"
+  },
+  "homepage": "https://github.com/logicallyabstract/register-wc#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
+  }
+}
