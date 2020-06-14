@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+      # TODO need tests
       # - run: npm run test
   cd:
     runs-on: ubuntu-latest
