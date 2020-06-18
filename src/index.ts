@@ -1,7 +1,26 @@
+/**
+ * Copyright (c) 2020-present, Logically Abstract, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 const regex = /^.*name\s"([a-z]+-[a-z]+)".*$/;
 
 const noop = () => {};
 
+/**
+ * Create the registrar for custom elements. This is usually used to
+ * create a singleton that all custom elements in a project can use.
+ *
+ * @example
+ * export const registerWc = createRegisterWc(process.env.WC_PROD === 'true');
+ *
+ * // in an element class definition file
+ * import { registerWc } from './path/to/register-wc';
+ * class MyElement extends HTMLElement {}
+ * registerWc('my-element', MyElement);
+ */
 export const createRegisterWc = (testMode = false) => {
   const exceptionMap: { [key: string]: boolean } = {};
 
