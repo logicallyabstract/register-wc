@@ -16,7 +16,7 @@ Create a singleton for your project to use:
 import { createRegisterWc } from '@logicallyabstract/register-wc';
 
 const { registerWc, createException, removeException } = createRegisterWc(
-  process.env.WC_PROD === 'true',
+  process.env.WC_TEST === 'true',
 );
 
 export { registerWc, createException, removeException };
