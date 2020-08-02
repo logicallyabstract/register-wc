@@ -1,6 +1,6 @@
 {
   "name": "@logicallyabstract/register-wc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Register a Web Component with the optionality for a test-friendly override",
   "main": "dist/index.js",
   "module": "dist/index.js",
