@@ -33,6 +33,6 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@logicallyabstract'
 
-      - run: npm publish --tag cd --access public
+      - run: npm publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
