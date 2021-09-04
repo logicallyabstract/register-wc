@@ -2,6 +2,12 @@
 
 Register a Web Component with the optionality for a test-friendly override
 
+## NOTE:
+
+While this library will continue to receive maintenance updates, please consider researching the work going into import maps for the browser. This looks to be a promising way to provide mocks in the browser using an esbuild test runner/server. This technique could be combined with using an iframe per test or test suite to ensure that unit tests are fully isolated, with mocked components.
+
+Fundamentally, source code should not be allowed to know if it is under test or not and this library must violate that rule in order to work around the lack of vetted solutions by the standards groups.
+
 ## Get Started
 
 `npm install --save @logicallyabstract/register-wc`

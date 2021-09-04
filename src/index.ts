@@ -36,12 +36,14 @@ export const createRegisterWc = (testMode = false) => {
     try {
       customElements.define(name, clazz);
     } catch (error) {
-      const matches = regex.exec(error.message);
-      if (matches && matches[1] && exceptionMap[matches[1]]) {
-        return;
+      if (error instanceof Error) {
+        const matches = regex.exec(error.message);
+        if (matches && matches[1] && exceptionMap[matches[1]]) {
+          return;
+        }
       }
 
-      throw error; // eslint-disable-line @typescript-eslint/no-throw-literal
+      throw error;
     }
   };
 
