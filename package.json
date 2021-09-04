@@ -1,16 +1,17 @@
 {
   "name": "@logicallyabstract/register-wc",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Register a Web Component with the optionality for a test-friendly override",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "author": {
     "name": "Logically Abstract, LLC"
   },
   "license": "MIT",
   "scripts": {
-    "build": "run-s clean build:ts",
-    "build:ts": "tsc -p tsconfig.build.json",
+    "build": "run-s clean build:esm build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "clean": "rimraf dist",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint --fix --ext .js,.ts ./",
@@ -33,14 +34,15 @@
     "dist"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-typescript": "^7.2.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.21.2",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5",
+    "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.5"
+    "typescript": "^4.4.2"
   }
 }
