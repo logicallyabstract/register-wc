@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
       - run: npm run build
       # - run: npm run test:coverage
